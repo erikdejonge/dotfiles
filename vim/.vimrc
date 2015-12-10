@@ -287,7 +287,7 @@ NeoBundle 'jpalardy/vim-slime'
 
 " Misc:
 
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'vim-scripts/scratch.vim'
 NeoBundle 'junegunn/vim-peekaboo'
@@ -456,6 +456,11 @@ set autoread
 " Sets up the clipboard to interface with the system clipboard
 
 set clipboard=unnamed
+
+" Turn on ttyfast and lazyredraw for speed in the Terminal
+
+set ttyfast
+set lazyredraw
 
 " }}}
 
