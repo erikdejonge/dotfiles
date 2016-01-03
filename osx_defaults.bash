@@ -32,6 +32,9 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 ## Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
+## Hide desktop icons
+defaults write com.apple.finder CreateDesktop -bool false
+
 # Dock
 
 ## Hide the Dock
@@ -75,8 +78,8 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock wvous-tl-corner -int 0
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
-### Top right screen corner: nothing
-defaults write com.apple.dock wvous-tr-corner -int 0
+### Top right screen corner: notification center
+defaults write com.apple.dock wvous-tr-corner -int 12
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 ### Bottom left screen corner: start screen saver
