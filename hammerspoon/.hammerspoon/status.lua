@@ -3,14 +3,16 @@ require "preferred_screen"
 local color = hs.drawing.color
 local crayons = color.lists()['Crayons']
 
+local updateInterval = 5
+
 allStatusItems = {
-                  {'sh ~/bin/status/frontmost_window.sh', 'left', crayons['Bubblegum']},
-                  {'sh ~/bin/status/music.sh', 'center', crayons['Honeydew']},
-                  {'sh ~/bin/status/cpu.sh', 'right', crayons['Moss']},
-                  {'sh ~/bin/status/memory.sh', 'right', crayons['Nickel']},
-                  {'sh ~/bin/status/battery.sh', 'right', crayons['Banana']},
-                  {'sh ~/bin/status/date.sh', 'right', crayons['Strawberry']},
-                  {'sh ~/bin/status/time.sh', 'right', crayons['Ice']}
+                  {'sh ~/bin/status/status_frontmost_window', 'left', crayons['Bubblegum']},
+                  {'sh ~/bin/status/status_music', 'center', crayons['Honeydew']},
+                  {'sh ~/bin/status/status_cpu', 'right', crayons['Moss']},
+                  {'sh ~/bin/status/status_memory', 'right', crayons['Nickel']},
+                  {'sh ~/bin/status/status_battery', 'right', crayons['Banana']},
+                  {'sh ~/bin/status/status_date', 'right', crayons['Strawberry']},
+                  {'sh ~/bin/status/status_time', 'right', crayons['Ice']}
                  }
 
 leftStatusItemText = nil
@@ -132,7 +134,7 @@ function statusTimerUpdate()
     updateStatusItems()
 end
 
-statusTimer = hs.timer.new(5, statusTimerUpdate)
+statusTimer = hs.timer.new(updateInterval, statusTimerUpdate)
 statusTimer:start()
 
 buildStatusItems()
